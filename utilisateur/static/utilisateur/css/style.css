@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div .content {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.main {
+    max-width: 500px;
+    margin: 2rem auto;
+    border: 2px solid #373a42;
+}
+
+.input {
+    display: block;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 15px;
+    width: 90%;
+    transition: all 0.5s ease;
+}
+
+.btnconnexion {
+    background-color: #373a42;
+    color: #fff;
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 0px 0px 0px 15px;
+    transition: all 0.5s ease;
+}
+
+.btnconnexion:hover {
+    background-color: #1ce;
+    color: black;
+    border-radius: 150px;
+    cursor: pointer;
+}
+
+.lien {
+    text-decoration: none;
+}
+
+.lien:hover {
+    text-decoration: underline;
+    color: #1ce;
+}
+
+.liencontent {
+    margin-top: 10px;
+    margin-left: 15px;
+}

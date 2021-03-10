@@ -1,0 +1,79 @@
+<!doctype html> {% extends 'layouts/base.html' %} {% load static %}
+
+<!--  -->
+{% block title %} Blog|Acme {% endblock %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}"> {% endblock %} 
+<!--  -->
+
+{% block content %}
+
+   
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
+                    <p class="text-light">We Love Django As much as you do..! &nbsp
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> 
+ <!-- Title -->
+    <h1 class="">My blog ({{ posts|length }} posts)</h1>
+
+<div class="container">
+    <a class="btn btn-primary mt-2" href="{% url 'add_Post' %}">Ajouter des posts</a>
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">#{{post.id}} - {{ post.title }}</h2>
+                    <p class="card-text text-muted h6"> </p>
+                    <p class="card-text text-muted h6"> 
+                        <time datetime="{{ post.created_at|date:'Y-m-d' }}">
+                        Posted {{ post.created_at|timesince }} ago
+                        </time>
+                    </p>
+                    <p class="card-text">{{ post.body|slice:":200" }}</p>
+                    <a class="btn btn-primary" href="{% url 'show' post.id  %}">Lire la suite</a>
+                    {% comment %} <a href="{% url 'show' id=post.id %}"> Comments: {{ post.approved_comments.count }}</a> {% endcomment %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        {% for post in posts %}
+
+        {% if not forloop.last %} {% endif %} {% empty %}   
+        <p>Sorry, no posts available.</p>
+        {% endfor %}
+        {% block sidebar %} {% include 'layouts/_sidebar.html' %} {% endblock sidebar %}
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    {% if posts.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a></li>
+     {% else %}
+    <li class="page-item disabled">
+    <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    {% endif %}
+    <li class="page-item"><a class="page-link" href="?page=1">1</a></>
+    <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+    {% if posts.has_next %}
+    <li class="page-item"><a class="page-link" href="?page={{ posts.next_page_number }}">Next</a></li>
+    {% endif %}
+  </ul>
+</nav>
+    </div>
+</div>
+{% endblock%}

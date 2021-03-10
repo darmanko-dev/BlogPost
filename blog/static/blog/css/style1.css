@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+div .content {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.main-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    border: 1px solid black;
+}
+
+.title {
+    color: #373a42;
+}
+
+label {
+    display: block;
+    padding: 1rem 0 .25rem;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    border: 2px solid #373a42;
+    padding: 20px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.btn {
+    border: 0;
+    background: black;
+    padding: 10px;
+    color: white;
+    margin: 1rem 0;
+    margin-bottom: 10px;
+    width: auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #1ce;
+    text-decoration: underline;
+    border-radius: 150px
+}
+
+.btnModifer {
+    background-color: DodgerBlue;
+    margin: 10px 5px;
+    padding: 10px;
+    border: 0;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    width: auto;
+}
+
+.btnModifer:hover {
+    text-decoration: underline;
+    background-color: rgb(125, 180, 235);
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.btnSupprime {
+    background-color: #ff6347;
+    margin: 10px 5px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    width: auto;
+    border: none;
+    text-decoration: none;
+}
+
+.btnSupprime:hover {
+    text-decoration: underline;
+    background-color: #f58c79;
+    transition: all 0.5s ease;
+}
+
+.modfierlien {
+    color: #fff;
+    text-decoration: none;
+}
+
+.supprimelien {
+    color: #fff;
+    text-decoration: none;
+}
+
+.alert {
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.btnYes {
+    background-color: rgb(255, 0, 0);
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 05px;
+    text-align: center;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btnYes:hover {
+    background-color: rgb(231, 125, 125);
+    color: black;
+    text-decoration: underline;
+    transition: all 0.5s ease-in-out;
+}
+
+.btnNon {
+    background-color: #6a5acd;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: none;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btnNon:hover {
+    background-color: #8776f5;
+    color: black;
+    text-decoration: underline;
+    transition: all 0.5s ease-in-out;
+}
+
+.main-comment {
+    padding: 10px;
+    margin: 20px;
+}

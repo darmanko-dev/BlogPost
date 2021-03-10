@@ -1,0 +1,18 @@
+<!doctype html> {% extends 'layouts/base.html' %} {% load static %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'blog/css/style1.css' %}"> {% endblock %}
+<!--  -->
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="alert">
+        Êtes-vous sur de bien voulloir supprimé le post <strong>{{ post }}</strong>  ?
+    </div>
+    <div>
+        <button type="submit" class="btnYes">Oui</button>
+        <a href="{% url 'index' %}" class="btnNon">Non</a>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+<!doctype html> {% extends 'layouts/base.html' %} {% load static %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'blog/css/style1.css' %}"> {% endblock %}
+<!--  -->
+{% block content %}
+<h1 class="title">Add blog Post</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 left">
+    <form method="POST">
+        {% csrf_token %} {{ form.as_p}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    {% include 'layouts/_sidebar.html' %}
+    </div>
+</div>
+
+{% endblock %}

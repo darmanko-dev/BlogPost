@@ -1,0 +1,25 @@
+<!doctype html>{% extends "layouts/base.html" %}
+<!--  -->
+{% load static %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'utilisateur/css/style.css' %}"> {% endblock %}
+<!--  -->
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 left">
+            <form method="POST">
+                {% csrf_token %} {{ form.as_p}}
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <div> 
+                <p class="liencontent">Vous avez un compte ?
+                    <a href="{% url 'login' %}" class="lien">Se connecter</a>
+                </p>
+                </div>
+            </form>
+        </div>
+        {% include 'layouts/_sidebar.html' %}
+    </div>
+</div>
+{% endblock %}

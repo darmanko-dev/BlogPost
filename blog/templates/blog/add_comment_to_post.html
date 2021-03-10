@@ -1,0 +1,19 @@
+<!DOCTYPE>
+<!--  -->
+{% extends 'layouts/base.html' %}  
+{% block content %}
+
+<!-- Comments Form -->
+<div class="card my-4">
+    <h5 class="card-header">Leave a Comment:</h5>
+    <div class="card-body">
+        <form method="POST">
+            <div class="form-group">
+                {% csrf_token %} {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<!doctype html> {% extends "layouts/base.html" %} {% block content %}
+<div class="main">
+    <div class="media-profil">
+        <img src="{{ user.profile.image.url }}" alt="" class="img-profile">
+        <div class="user-profile">
+            <h2 class="username-profile">{{ user.username }}</h2>
+            <p class="email-profile">{{ user.email }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

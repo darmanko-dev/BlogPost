@@ -1,0 +1,26 @@
+<!doctype html> {% extends 'layouts/base.html' %} {% load static %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'blog/css/style1.css' %}"> {% endblock %}
+<!--  -->
+{% block content %}
+<h1 class="title mt-5">Update blog Post</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 left">
+    <div class="form-group">
+        <form method="POST">
+        {% csrf_token %} {{ form.as_p}}
+        <input type="text" name="title" value="{{ post.title }}" class="form-control" />
+        <textarea cols="10" rows="10" name="body" value="{{ post.body }}" class="form-control"></textarea>
+        <button type="submit " class="btn btn-primary mt-2">Ajouter</button>
+    </form>
+    </div>
+    </div>
+    {% include 'layouts/_sidebar.html' %}
+    </div>
+</div>
+
+
+</div>
+{% endblock %}

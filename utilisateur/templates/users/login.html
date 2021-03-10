@@ -1,0 +1,37 @@
+<!doctype html> {% extends "layouts/base.html" %} {% load static %}
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'utilisateur/css/style.css' %}"> {% endblock %}
+<!--  -->
+{% block content %}
+<!-- <div class="content">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="main">
+            <legend class="registerTitle">Login</legend>
+            {{ form.as_p }}
+            <button type="submit" class="btnconnexion">Connexion</button>
+            <div class="liencontent">
+                Vous êtes nouveau ?
+                <a href="{% url 'register' %}" class="lien">S'inscrire</a>
+            </div>
+        </fieldset>
+    </form>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 left">
+            <form method="POST">
+                <label for="">Login</label> {% csrf_token %} {{ form.as_p}}
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="liencontent">
+                    Vous êtes nouveau ?
+                    <a href="{% url 'register' %}" class="link">S'inscrire</a>
+                </div>
+            </form>
+        </div>
+        {% include 'layouts/_sidebar.html' %}
+    </div>
+</div>
+{% endblock %}
