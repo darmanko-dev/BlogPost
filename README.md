@@ -1,2 +1,2 @@
 # BlogPost
-Blog Post Django
+Blog Posts Django
